@@ -12,13 +12,13 @@ ChartJS.register(
   Legend
 );
 
-const WeatherChart = ({ data }) => {
+const WeatherChart = ({ data, label, valueKey }) => {
   const chartData = {
-    labels: data.map((entry) => entry.date),
+    labels: data.map((entry) => entry.date), 
     datasets: [
       {
-        label: 'Temperature (°F)',
-        data: data.map((entry) => entry.temperature),
+        label: label,  
+        data: data.map((entry) => entry[valueKey]), 
         borderColor: 'rgba(75, 192, 192, 1)',
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         fill: true,
@@ -35,7 +35,7 @@ const WeatherChart = ({ data }) => {
       },
       title: {
         display: true,
-        text: 'Weather Data Tracking',
+        text: `${label} Over Time`,
       },
     },
     scales: {
@@ -48,8 +48,9 @@ const WeatherChart = ({ data }) => {
       y: {
         title: {
           display: true,
-          text: 'Temperature (°F)',
+          text: label,
         },
+        beginAtZero: false,  
       },
     },
   };
@@ -58,4 +59,5 @@ const WeatherChart = ({ data }) => {
 };
 
 export default WeatherChart;
+
 

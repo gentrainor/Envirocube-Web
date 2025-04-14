@@ -32,13 +32,7 @@ function Account() {
           </li>
         </ul>
       </div>
-      <div className="description mt-4 p-4 rounded shadow" style={{ backgroundColor: "#F9F9F9" }}>
-      <h4>How We Created EnviroCube</h4>
-          <p>
-            Sensor information....
-            Web application information...
-            </p>
-        </div>
+      
     </div>
   );
 }

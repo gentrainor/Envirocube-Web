@@ -21,11 +21,30 @@ function App() {
   return (
     <Router>
       <div className="d-flex" style={{ height: "100vh" }}>
+        {/* Sidebar */}
         <Sidebar />
-        <div className="flex-grow-1 d-flex flex-column" style={{ backgroundColor: "#FFFFFF" }}>
+
+        {/* Main content */}
+        <div
+          className="flex-grow-1 d-flex flex-column"
+          style={{
+            marginLeft: "200px",  // Push the main content to the right to make space for the sidebar
+            backgroundColor: "#FFFFFF",
+            paddingTop: "20px",   // Optional: Add some padding on top
+          }}
+        >
           <div className="d-flex align-items-center justify-content-center my-4">
             <CubeIcon />
-            <h1 className="text-center ms-2" style={{ fontFamily: 'sans-serif', fontWeight: 'bold', color: "#4F7363" }}>ENVIROCUBE</h1>
+            <h1
+              className="text-center ms-2"
+              style={{
+                fontFamily: 'sans-serif',
+                fontWeight: 'bold',
+                color: "#4F7363",
+              }}
+            >
+              ENVIROCUBE
+            </h1>
           </div>
           <div className="flex-grow-1 p-3">
             <Routes>
